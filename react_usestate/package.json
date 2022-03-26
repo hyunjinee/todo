@@ -10,7 +10,8 @@
     "start": "webpack serve --config webpack.config.js --env env=development",
     "build": "webpack --config webpack.config.js --env env=production",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "test": "yarn cypress open"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -31,6 +32,7 @@
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
+    "cypress": "^9.5.2",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
