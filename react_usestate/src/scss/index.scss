@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import 'reset';
+@import 'theme';
+@import 'animation';
+@import 'App';
+
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  @include theme(light);
+  width: 100%;
+  height: 100vh;
+  transition: 0.3s;
+  box-shadow: $shadow;
+  background-color: $background;
+  #theme-btn {
+    @include flex-center;
+    z-index: 200;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    box-shadow: $shadow;
+    background-color: $background;
+    border-radius: 50%;
+  }
+  .theme-btn-img {
+    width: 4rem;
+    height: 4rem;
+    animation-direction: reverse;
+    background-size: contain;
+    background-image: url('../../assets/sun.svg');
+  }
+}
+
+.dark-mode {
+  .theme-btn-img {
+    width: 3rem;
+    height: 3rem;
+    background-size: contain;
+    background-image: url('../../assets/icon-moon.svg');
+    // animation: toggle 0.3s;
+    // transition: all 1s;
+    // animation-direction: alternate;
+  }
+}
+
+.theme-btn-animation {
+  animation: toggle 0.3s;
+  animation-direction: reverse;
+}

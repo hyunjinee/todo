@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>React From Scratch</title>
+    <title>투두투두</title>
   </head>
   <body>
+    <div id="theme-btn">
+      <div class="theme-btn-img"></div>
+    </div>
     <div id="root"></div>
+
+    <script>
+      if (localStorage.getItem('theme') === 'dark-mode') document.body.classList.add('dark-mode');
+
+      document.getElementById('theme-btn').addEventListener('click', (e) => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.className === 'dark-mode') localStorage.setItem('theme', 'dark-mode');
+        else localStorage.setItem('theme', 'light-mode');
+      });
+    </script>
   </body>
 </html>
