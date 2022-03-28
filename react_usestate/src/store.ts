@@ -26,7 +26,7 @@ export const addTodo = (todos: Todo[], text: string): Todo[] => [
   },
 ];
 
-export const useTodos = (initial: Todo[]) => React.useState<Todo[]>(initial);
+export const useTodos = (initial: Todo[]) => React.useState<Todo[] | any>(initial);
 export type UseTodosType = ReturnType<typeof useTodos>;
 export type TodosType = UseTodosType[0];
 export type setTodosType = UseTodosType[1];

@@ -14,3 +14,22 @@
     left: 1rem;
   }
 }
+
+.fire {
+  @include flex-center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  box-shadow: $shadow;
+  border-radius: 50%;
+  @media (max-width: $phone-max-width) {
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    bottom: 1.2rem;
+  }
+}

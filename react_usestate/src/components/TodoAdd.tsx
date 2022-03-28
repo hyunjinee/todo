@@ -1,15 +1,15 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { MdAdd } from 'react-icons/md';
 
-import { setTodosType, TodosType, addTodo } from '../store';
+import { TodosType } from '../store';
 import './TodoAdd.scss';
 
 interface ITodoAdd {
   todos: TodosType;
-  setTodos: setTodosType;
+  addTodo: (todos: TodosType, text: string) => TodosType;
 }
 
-const TodoAdd = ({ todos, setTodos }: ITodoAdd) => {
+const TodoAdd = ({ todos, addTodo }: ITodoAdd) => {
   const [newTodo, setNewTodo] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -23,7 +23,7 @@ const TodoAdd = ({ todos, setTodos }: ITodoAdd) => {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      setTodos(addTodo(todos, newTodo));
+      addTodo(todos, newTodo);
       setNewTodo('');
 
       inputRef.current?.focus();
