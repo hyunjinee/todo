@@ -3,22 +3,13 @@
 만개정도의 투두를 렌더링한다면 웹사이트가 얼마나 느려질까? 아래의 결과를 봅시다. 만개의 투두중에 5개를 토글해보겠습니다. TodoList(16.8 of 779.2)ms
 사용자가 사용할 때 사용하기 불편할 정도로 느렸다.
 
-<video width="100%" height="100%" controls="controls">
-<source src="https://user-images.githubusercontent.com/63354527/160422127-3441ec58-4386-4fef-a6bf-1278fd579255.mp4" type"video/mp4">
-</video>
-
-<!-- <video width="100%" height="100%" controls="controls">
-<source src="https://user-images.githubusercontent.com/63354527/160421334-1f8451f4-4505-4476-9839-8de6d08b89c6.mp4" type"video/mp4">
-</video> -->
+https://user-images.githubusercontent.com/63354527/160429468-36960aa2-ce69-422b-8e33-d8c36b00aedf.mp4
 
 ## React.memo 적용
 
 아래는 10000개의 투두리스트 중에서 5개를 토글 했을 때 결과를 보여줍니다. 투두리스트를 렌더링 하는데 결과적으로 걸리는 시간은 TodoList (Memo)(18.3 of 26.2)ms 입니다.
 
-<video width="100%" height="100%" controls="controls">
-<source src="
-https://user-images.githubusercontent.com/63354527/160418234-0d5840b2-f0ec-48ca-a0a9-26677059b640.mp4" type"video/mp4">
-</video>
+https://user-images.githubusercontent.com/63354527/160429483-76535056-1045-4ee7-a0ae-fd99fee8feda.mp4
 
 ## _결과_
 
