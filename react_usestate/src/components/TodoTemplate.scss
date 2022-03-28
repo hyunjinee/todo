@@ -1,5 +1,10 @@
+@import '../scss/theme.scss';
+
 .wrapper {
   width: 512px;
   height: 512px;
-  background-color: red;
+  // min-width: 400px;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+  background-color: $background;
 }

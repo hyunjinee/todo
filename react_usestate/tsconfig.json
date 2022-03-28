@@ -15,6 +15,6 @@
     "allowJs": true,
     "checkJs": true
   },
-  "include": ["src/**/*", "assets"],
+  "include": ["src/**/*", "assets", "custom.d.ts"],
   "exclude": ["node_modules", "build"]
 }

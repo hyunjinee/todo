@@ -1,3 +1,10 @@
-div {
-  font-family: 'BMDOHYEON', sans-serif;
+@import './theme.scss';
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  top: 3.5rem;
+  font-size: 3rem;
+  color: $primary1;
 }
