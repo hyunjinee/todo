@@ -39,6 +39,12 @@ body {
     box-shadow: $shadow;
     background-color: $background;
     border-radius: 50%;
+    @media (max-width: $phone-max-width) {
+      top: 1.2rem;
+      right: 1rem;
+      width: 3rem;
+      height: 3rem;
+    }
   }
   .theme-btn-img {
     width: 4rem;
@@ -46,6 +52,10 @@ body {
     animation-direction: reverse;
     background-size: contain;
     background-image: url('../../assets/sun.svg');
+    @media (max-width: $phone-max-width) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 

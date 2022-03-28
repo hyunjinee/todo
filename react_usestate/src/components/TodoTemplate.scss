@@ -7,4 +7,9 @@
   border-radius: 1rem;
   box-shadow: $shadow;
   background-color: $background;
+
+  @media (max-width: $phone-max-width) {
+    height: 100%;
+    margin-top: 10rem;
+  }
 }

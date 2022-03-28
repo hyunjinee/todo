@@ -1,5 +1,5 @@
 @use '../utils' as *;
-// variables
+
 $title-active: var(--title-active-color);
 $input-color: var(--input-color);
 $primary1: var(--primary1-color);
@@ -8,6 +8,7 @@ $background: var(--background-color);
 $placeholder: var(--placeholder-color);
 $line: var(--line-color);
 $shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+$phone-max-width: 425px;
 
 $config: (
   light: (
