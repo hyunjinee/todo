@@ -44,7 +44,7 @@ const toggleTodo = useCallback(
 
 위와 같이 함으로써 toggleTodo라는 다시 만들어지지 않고 그에 따라서 toggleTodo를 props로 전달했을 때 TodoListItem에서 props가 바뀔 일이 없습니다. 따라서 변화가 없으므로 React.memo를 적용했을 경우 리렌더링이 일어나지 않습니다.
 
-`상태관리를 React.useState만를 이용해서 어플케이션을 작성하였고(다른 비교군은 context api, redux, recoil등으로 진행) 렌더링 최적화를 useCallback과 React.meme로 해준 결과, 만개의 투두를 렌더링하는데 약 30배의 성능차이를 보였습니다.`
+`상태관리를 React.useState만를 이용해서 어플케이션을 작성하였고(다른 비교군은 context api, redux, recoil등으로 진행) 렌더링 최적화를 useCallback과 React.memo로 해준 결과, 만개의 투두를 렌더링하는데 약 30배의 성능차이를 보였습니다.`
 
 마지막으로 아래는 크롬의 lighthouse를 이용한 성능 결과 보고서입니다.
 
