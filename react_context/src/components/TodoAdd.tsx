@@ -1,16 +1,12 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useCallback, useRef, useEffect } from 'react';
 import { MdAdd } from 'react-icons/md';
 
-import { TodosType } from '../store';
+import { useTodosDispatch } from '../store';
 import './TodoAdd.scss';
 
-interface ITodoAdd {
-  todos: TodosType;
-  addTodo: (todos: TodosType, text: string) => TodosType;
-}
-
-const TodoAdd = ({ todos, addTodo }: ITodoAdd) => {
-  const [newTodo, setNewTodo] = useState('');
+const TodoAdd = () => {
+  const [newTodo, setNewTodo] = React.useState('');
+  const dispatch = useTodosDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => inputRef.current?.focus(), []);
@@ -23,7 +19,7 @@ const TodoAdd = ({ todos, addTodo }: ITodoAdd) => {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      addTodo(todos, newTodo);
+      dispatch({ type: 'CREATE', text: newTodo });
       setNewTodo('');
 
       inputRef.current?.focus();
@@ -33,12 +29,24 @@ const TodoAdd = ({ todos, addTodo }: ITodoAdd) => {
   );
 
   return (
-    <form className="TodoAdd" onSubmit={onSubmit}>
-      <input placeholder="할 일을 입력하세요" value={newTodo} onChange={onChange} ref={inputRef} />
-      <button type="submit">
-        <MdAdd />
-      </button>
-    </form>
+    <>
+      <form className="TodoAdd" onSubmit={onSubmit}>
+        <input placeholder="할 일을 입력하세요" value={newTodo} onChange={onChange} ref={inputRef} />
+        <button type="submit">
+          <MdAdd />
+        </button>
+      </form>
+      <div
+        className="fire"
+        onClick={() => {
+          for (let i = 0; i < 10000; i++) {
+            dispatch({ type: 'CREATE', text: `할일 ${i}` });
+          }
+        }}
+      >
+        🔥
+      </div>
+    </>
   );
 };
 

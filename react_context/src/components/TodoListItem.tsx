@@ -1,31 +1,31 @@
 import React from 'react';
 import { MdCheckBox, MdCheckBoxOutlineBlank, MdRemoveCircleOutline } from 'react-icons/md';
 
-import { Todo } from '../store';
+import { Todo, useTodosDispatch } from '../store';
 
 interface ITodoListItem {
   todo: Todo;
-  toggleTodo: (id: number) => void;
-  removeTodo: (id: number) => void;
 }
 
-const TodoListItem = ({ todo, toggleTodo, removeTodo }: ITodoListItem) => {
+const TodoListItem = ({ todo }: ITodoListItem) => {
+  const dispatch = useTodosDispatch();
+
   return (
     <div key={todo.id} className="TodoListItem">
       <div
         className={todo.done ? 'checkbox checked' : 'checkbox'}
         onClick={() => {
-          toggleTodo(todo.id);
+          dispatch({ type: 'TOGGLE', id: todo.id });
         }}
       >
         {todo.done ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div className="text">{todo.text}</div>
       </div>
-      <div className="remove" onClick={() => removeTodo(todo.id)}>
+      <div className="remove" onClick={() => dispatch({ type: 'REMOVE', id: todo.id })}>
         <MdRemoveCircleOutline />
       </div>
     </div>
   );
 };
 
-export default React.memo(TodoListItem);
+export default TodoListItem;

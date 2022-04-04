@@ -1,23 +1,19 @@
 import React from 'react';
 
-import { TodosType, Todo } from '../store';
+import { useTodosState, Todo } from '../store';
 import './TodoList.scss';
 import TodoListItem from './TodoListItem';
 
-interface ITodoList {
-  todos: TodosType;
-  toggleTodo: (id: number) => void;
-  removeTodo: (id: number) => void;
-}
-
-const TodoList = ({ todos, toggleTodo, removeTodo }: ITodoList) => {
+const TodoList = () => {
+  const todos = useTodosState();
+  // console.log(todos);
   return (
     <div className="TodoList">
       {todos.map((todo: Todo) => (
-        <TodoListItem key={todo.id} todo={todo} toggleTodo={toggleTodo} removeTodo={removeTodo} />
+        <TodoListItem key={todo.id} todo={todo} />
       ))}
     </div>
   );
 };
 
-export default React.memo(TodoList);
+export default TodoList;
