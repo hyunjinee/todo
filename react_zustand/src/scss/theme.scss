@@ -1,0 +1,65 @@
+@use '../utils' as *;
+
+$title-active: var(--title-active-color);
+$input-color: var(--input-color);
+$primary1: var(--primary1-color);
+$primary2: var(--primary2-color);
+$background: var(--background-color);
+$placeholder: var(--placeholder-color);
+$line: var(--line-color);
+$shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+$phone-max-width: 425px;
+
+$config: (
+  light: (
+    title-active: #1e2222,
+    input-color: #2e2d33,
+    background: #f5f5f5,
+    placeholder: #c1c5c5,
+    grey1: #888888,
+    grey2: #bbbbbb,
+    line: #ccd3d3,
+    primary1: #74c0fc,
+  ),
+  dark: (
+    title-active: #fff,
+    input-color: #2e2d33,
+    background: #1e2222,
+    placeholder: #c1c5c5,
+    grey1: #888888,
+    grey2: #bbbbbb,
+    line: #888888,
+    primary1: #74c0fc,
+  ),
+);
+
+@function setStyle($map, $object, $style) {
+  @if map-has-key($map, $object) {
+    @return map-get(map-get($map, $object), $style);
+  }
+  @warn "The key ´#{$object} is not available in the map.";
+  @return null;
+}
+
+@mixin theme($key) {
+  --title-active-color: #{setStyle($config, $key, title-active)};
+  --input-color: #{setStyle($config, $key, input-color)};
+  --background-color: #{setStyle($config, $key, background)};
+  --placeholder-color: #{setStyle($config, $key, placeholder)};
+  --grey1-color: #{setStyle($config, $key, grey1)};
+  --grey2-color: #{setStyle($config, $key, grey2)};
+  --line-color: #{setStyle($config, $key, line)};
+  --primary1-color: #{setStyle($config, $key, primary1)};
+}
+
+@each $theme in dark, light {
+  body.#{$theme}-mode {
+    @include theme($theme);
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
