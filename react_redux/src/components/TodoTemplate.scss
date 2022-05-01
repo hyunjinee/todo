@@ -1,0 +1,15 @@
+@import '../scss/theme.scss';
+
+.wrapper {
+  width: 512px;
+  height: 512px;
+  // min-width: 400px;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+  background-color: $background;
+
+  @media (max-width: $phone-max-width) {
+    height: 100%;
+    margin-top: 10rem;
+  }
+}

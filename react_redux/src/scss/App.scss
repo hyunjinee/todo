@@ -1,0 +1,35 @@
+@import './theme.scss';
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  top: 3.5rem;
+  font-size: 3rem;
+  color: $primary1;
+
+  @media (max-width: $phone-max-width) {
+    font-size: 1.5rem;
+    top: 2rem;
+    left: 1rem;
+  }
+}
+
+.fire {
+  @include flex-center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  box-shadow: $shadow;
+  border-radius: 50%;
+  @media (max-width: $phone-max-width) {
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    bottom: 1.2rem;
+  }
+}
