@@ -11,8 +11,8 @@
 ## Result
 
 |                                             링크                                              | 상태관리 방법 | 웹 성능 | 모바일 성능 |
-| :-------------------------------------------------------------------------------------------: | :-----------: | :-----: | :---------: | --- |
-| <a href="https://github.com/hyunjinee/todo/tree/master/react_usestate" target="_blank">🌐</a> |   useState    |   95    |     62      |     |
+| :-------------------------------------------------------------------------------------------: | :-----------: | :-----: | :---------: | 
+| <a href="https://github.com/hyunjinee/todo/tree/master/react_usestate" target="_blank">🌐</a> |   useState    |   95    |     62      |     
 | <a href="https://github.com/hyunjinee/todo/tree/master/react_usestate" target="_blank">🌐</a> |  Redux(RTK)   |   95    |     62      |
 |  <a href="https://github.com/hyunjinee/todo/tree/master/react_recoil" target="_blank">🌐</a>  |    Recoil     |   92    |     51      |
 | <a href="https://github.com/hyunjinee/todo/tree/master/react_usestate" target="_blank">🌐</a> |  Context API  |   79    |     57      |
